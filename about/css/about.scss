@@ -1,0 +1,306 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Noto+Sans+KR:wght@400;700&display=swap');
+@import '../../variables/variables';
+@import "../../mixin/mixin";
+// font-family: 'Noto Sans KR', sans-serif;
+// font-family: 'Dancing Script', cursive;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+}
+
+a,
+button {
+  cursor: pointer;
+}
+
+html,
+body {
+  height: 100%;
+  font-size: 10px;
+  color: $textcolor;
+}
+
+.screen_out {
+  text-indent: -9999px;
+  overflow: hidden;
+  position: absolute;
+}
+
+.container {
+  width: 100%;
+  position: absolute;
+  font-family: 'Noto Sans KR', sans-serif;
+}
+
+// header
+
+.header {
+  @include header;
+}
+
+// main
+
+.project {
+  position: relative;
+  width: 100%;
+  margin-top: 200px;
+  &__inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 3rem;
+  }
+  &-main {
+    width: 100%;
+    text-align: center;
+    &__logo {
+      img {
+        @include mobileAndTablet {
+          width: 24%;
+        }
+      }
+    }
+    &__txt {
+      font-size: 2rem;
+      margin: 40px 0;
+      line-height: 3.5rem;
+      @include mobileAndTablet {
+        width: 100%;
+      }
+      span {
+        @include mobileAndTablet {
+          font-size: 1.4rem;
+        }
+      }
+    }
+  }
+  &-content {
+    background-color: $maincolor;
+    width: 100%;
+    height: 100%;
+    &__txt {
+      padding-top: 70px;
+      &--name {
+        font-size: 3rem;
+        font-weight: bold;
+        color: #ccb7ff;
+        width: 100%;
+        @include mobileAndTablet {
+          font-size: 2rem;
+        }
+      }
+    }
+    &__subtxt {
+      font-size: 2rem;
+      height: 200px;
+      display: flex;
+      flex-direction: column;
+      line-height: 3.5rem;
+      width: 100%;
+      padding: 0 2rem 0 0;
+      margin-top: 30px;
+      @include mobileAndTablet {
+        width: 100%;
+        font-size: 1.4rem;
+      }
+    }
+    &__box {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      @include tablet {
+        flex-direction: column;
+      }
+      @include mobile {
+        flex-direction: column;
+      }
+      &--left {
+        img {
+          @include tablet {
+            padding: 0;
+          }
+          @include mobile {
+            padding: 0;
+          }
+          width: 100%;
+          padding-right: 30px;
+        }
+      }
+      &--right {
+        @include tablet {
+          top: 0;
+        }
+        @include mobile {
+          top: 0;
+        }
+        position: relative;
+        bottom: 200px;
+        img {
+          width: 100%;
+        }
+      }
+    }
+    .box__txt {
+      font-family: 'Noto Sans KR', sans-serif;
+      font-size: 1.875rem;
+      margin: 8px 0 70px;
+      span {
+        margin: 0 1rem;
+      }
+      &--color {
+        font-weight: bold;
+        color: #ccb7ff;
+      }
+    }
+    &-page {
+      width: 100%;
+    }
+  }
+
+  &-page {
+    width: 100%;
+    height: 100%;
+    &__txt {
+      width: 100%;
+      font-size: 3rem;
+      margin-top: 70px;
+      font-weight: bold;
+      color: #ccb7ff;
+      @include mobileAndTablet {
+        font-size: 2rem;
+      }
+    }
+    &__subtxt {
+      width: 100%;
+      font-size: 2rem;
+      margin: 2rem 0;
+      line-height: 3.5rem;
+      @include mobileAndTablet {
+        font-size: 1.4rem;
+      }
+    }
+    &__img {
+      img {
+        width: 100%;
+        box-shadow: 0px 3px 10px $boxshadow;
+        border-radius: 10px;
+      }
+    }
+  }
+
+  &-team {
+    width: 100%;
+    height: 100%;
+    padding-bottom: 70px;
+    &__txt {
+      width: 100%;
+      margin-top: 70px;
+      font-family: 'Noto Sans KR', sans-serif;
+      &--name {
+        font-size: 3rem;
+      }
+      &--subname {
+        font-size: 2rem;
+        margin: 5rem 0;
+      }
+    }
+    &__subtxt {
+      margin: 5rem 0;
+    }
+    &__profile {
+      display: flex;
+      align-items: center;
+      width: 100%;
+      height: 100%;
+      box-shadow: 0px 3px 10px $maincolor;
+      @include mobileAndTablet {
+        display: flex;
+        flex-direction: column;
+      }
+      &--img {
+        width: 130px;
+        height: 130px;
+        margin: 103px;
+        @include mobileAndTablet {
+          margin: 10px 0;
+        }
+      }
+      &--content {
+        font-family: 'Noto Sans KR', sans-serif;
+        width: 100%;
+        height: 100%;
+        @include mobileAndTablet {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          padding: 0 2rem 2rem 2rem;
+        }
+      }
+      &__des {
+        width: 100%;
+      }
+    }
+    &__profile:last-child {
+      margin: 3rem 0;
+    }
+    &__address--color {
+      color: #ccb7ff;
+    }
+  }
+  &-name {
+    margin: 0.6rem 0;
+    font-size: 1.4rem;
+    width: 100%;
+    @include mobileAndTablet {
+      text-align: center;
+    }
+  }
+  &-name:nth-child(1) {
+    display: flex;
+    align-items: center;
+    @include mobileAndTablet {
+      flex-direction: column;
+    }
+  }
+}
+.name {
+  font-size: 20px;
+  @include mobileAndTablet {
+    font-size: 1.6rem;
+  }
+  &__part {
+    font-size: 1.6rem;
+    background-color: $maincolor;
+    color: #333;
+    padding: 0.4rem 1rem;
+    margin: 0 0.8rem;
+    border-radius: 20px;
+    @include mobileAndTablet {
+      font-size: 1rem;
+      margin: 0 0.2rem;
+    }
+  }
+  &__sub {
+    @include mobileAndTablet {
+      display: flex;
+      margin-top: 5px;
+    }
+  }
+}
+
+.txtColor {
+  color: #ccb7ff;
+}
+
+// footer
+
+.footer {
+  @include footer;
+}
+

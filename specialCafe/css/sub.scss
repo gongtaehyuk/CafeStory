@@ -1,0 +1,68 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Noto+Sans+KR:wght@400;700&display=swap');
+@import "../../variables/_variables.scss";
+@import "../../mixin/_mixin.scss";
+// font-family: 'Noto Sans KR', sans-serif;
+// font-family: 'Dancing Script', cursive;
+
+// 변수
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  font-size: 10px;
+  color: $textcolor;
+}
+
+li{
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+// 웹접근성 텍스트
+.screen_out {
+  display: none
+}
+
+// Header
+
+.header {
+  @include header;
+}
+
+.footer {
+  @include footer;
+}
+
+// Main
+// .main {
+//   position: relative;
+//   width: 100%;
+//   height: 100%;
+//   &__content {
+//     width: 100%;
+//     height: 100%;
+//   }
+//   &__home {
+//     background-color: $maincolor;
+//   }
+// }
+
+// Main-Home
+// .home__inner {
+//   width: 1200px;
+//   height: 400px;
+//   margin: 0 auto;
+// }
+
+// Footer
+
