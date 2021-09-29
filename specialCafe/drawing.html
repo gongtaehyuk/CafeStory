@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.15.3/css/all.css"
+      integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk"
+      crossorigin="anonymous"
+    />
+    <!-- Css -->
+    <link rel="stylesheet" href="./css/specialCafe.css" />
+    <link rel="stylesheet" href="./css/sub.css" />
+    <title>Special Cafe</title>
+  </head>
+  <body>
+    <div class="container">
+      <!-- Hearder -->
+      <header class="header">
+        <div class="header__logo">
+          <h2 class="screen_out"><a href="#none">로고</a></h2>
+          <a href="../index.html"><img src="../img/01/logo.png" alt="logo"></a>
+        </div>
+        <ul class="header__menu">
+          <h2 class="screen_out"><a href="#none">네비게이션</a></h2>
+          <li><a href="../index.html">Main</a></li>
+          <li><a href="../specialCafe/rooftop.html">SpeciaCafe</a></li>
+          <li><a href="../about/about.html">About</a></li>
+        </ul>
+        <button tyle="button" value="night" class="header__btn">
+          <h2 class="screen_out"><a href="#none">모드</a></h2>
+            <i class="fas fa-moon"></i>
+            <span class="header__btn--right">다크모드</span>
+        </button>
+        <a href="#none" class="header__toogleBtn">
+          <i class="fas fa-bars"></i>
+        </a>
+      </header>
+
+        <main class="main">
+          <section class="main__content main__home">
+            <div class="home__inner">
+              <h2 class="screen_out">메인</h2>
+              <div class="main__tit">
+                <p class='main__title'>그림 그리는거 좋아해?</p>
+                <p class='sub__title'> 커피 한 잔의 여유를 즐기며 수채화를 그릴 수 있는 카페를 경험해 보세요.</p>
+              </div>
+            </div>
+          </section>
+        <!-- 스페셜 카페 content -->
+        <section class="content">
+          <!-- article 3-1. 메뉴 박스 부분 -->
+          <article class="content__menu">
+            <!-- 카페 메뉴 - 종류 선택 -->
+            <div class="wrap">
+              <ul class="cafeKinds">
+                <li class="rooftopCafe"><a href="./rooftop.html"><img class="cafeIcon" src='../img/icon/rooftop.png'>루프탑 카페</a></li>
+                <li class="drawingCafe"><a class="visited" href="./drawing.html"><img class="cafeIcon" src='../img/icon/color-palette.png'>드로잉 카페</a></li>
+                <li class="themeCafe"><a href="./themed.html"><img class="cafeIcon" src='../img/icon/hot-air-balloon.png'>테마 카페</a></li>
+                <li class="healingCefe"><a href="./healing.html"><img class="cafeIcon" src='../img/icon/relax.png'>힐링 카페</a></li>
+              </ul>
+              <div class="underline"></div>
+            </div>
+            
+            <!-- <hr /> -->
+            <!-- 카페 메뉴 - 위치 선택 -->
+            <!-- <ul class="locations">
+              <li>서울</li>
+              <li>경기</li>
+              <li>인천</li>
+              <li>부산</li>
+              <li>제주</li>
+            </ul> -->
+            <!-- 카페 메뉴 - 해시 태그 -->
+            <!-- <ul class="tags">
+              <li>#키즈존</li>
+              <li>#노키즈존</li>
+              <li>#주차가능</li>
+              <li>#풍경 좋은곳</li>
+            </ul> -->
+          </article>
+
+          <!-- article 3-1. 이미지 박스 부분 -->
+          <article class="content__imgs">
+            <!-- 선택된 카페 카테고리 텍스트  -->
+            <div class="select__cafe">
+              <span><a href="../specialCafe/rooftop.html">Special Cafe</a></span>              
+              <i class="fas fa-chevron-right fa-1x"></i>
+              <span><a href="./drawing.html">드로잉 카페</a></span>
+            </div>
+            <!-- 카페 이미지 모음 -->
+            <div class="cafe__block">
+              <div class="cafe__imgs">
+                <!-- 카페 이미지 1번째 줄 -->
+                <ul class="cafe__imgs1">
+                  <li class="img__block">
+                    <button class="cafeDetailBtn" name="drawing" value='picturestudio'>
+                      <img src="../img/specialCafe/2/seoul/picturestudio.png" alt="" />
+                      <div class="img__text">그림제작소</div>
+                    </button>
+                  </li>
+                  <li class="img__block">
+                    <button class="cafeDetailBtn" name="drawing" value='pitchgray'>
+                    <img src="../img/specialCafe/2/seoul/pitchgray.png" alt="" />
+                    <div class="img__text">피치그레이</div>
+                    </button>
+                  </li>
+                  <li class="img__block">
+                    <button class="cafeDetailBtn" name="drawing" value='artcapink'>
+                    <img
+                      src="../img/specialCafe/2/gyeonggi/artcapink.png"
+                      alt=""
+                    />
+                    <div class="img__text">아트카페잉크</div>
+                    </button>
+                  </li>
+                <!-- 카페 이미지 2번째 줄 -->
+                  <li class="img__block">
+                    <button class="cafeDetailBtn" name="drawing" value='painting'>
+                    <img
+                      src="../img/specialCafe/2/gyeonggi/painting.png"
+                      alt=""
+                    />
+                    <div class="img__text">수채화를 그리다</div>
+                    </button>
+                  </li>
+                  <li class="img__block">
+                    <button class="cafeDetailBtn" name="drawing" value='asacolor'>
+                    <img
+                      src="../img/specialCafe/2/incheon/asacolor.png"
+                      alt=""
+                    />
+                    <div class="img__text">이사빛</div>
+                    </button>
+                  </li>
+                  <li class="img__block">
+                    <button class="cafeDetailBtn" name="drawing" value='nrfp'>
+                    <img src="../img/specialCafe/2/incheon/nrfp.png" alt="" />
+                    <div class="img__text">NRFP</div>
+                    </button>
+                  </li>
+                <!-- 카페 이미지 3번째 줄 -->
+                  <li class="img__block">
+                    <button class="cafeDetailBtn" name="drawing" value='artcafeink'>
+                    <img
+                      src="../img/specialCafe/2/busan/artcafeink.png"
+                      alt=""
+                    />
+                    <div class="img__text">Art cafe ink</div>
+                    </button>
+                  </li>
+                  <li class="img__block">
+                    <button class="cafeDetailBtn" name="drawing" value='pastelmuseum'>
+                    <img
+                      src="../img/specialCafe/2/busan/pastelmuseum.png"
+                      alt=""
+                    />
+                    <div class="img__text">파스텔뮤지엄</div>
+                    </button>
+                  </li>
+                  <li class="img__block">
+                    <button class="cafeDetailBtn" name="drawing" value='egon'>
+                    <img src="../img/specialCafe/2/jeju/egon.png" alt="" />
+                    <div class="img__text">성산카페 에곤</div>
+                    </button>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </article>
+        </section>
+      </main>
+
+       <!-- detail information -->
+       <section class="main_detail_info">
+        <article class="main__content main__home">
+          <div class="main__tit">
+            <h1 class="detailed__information">Detailed Information</h2>
+          </div>
+          
+        </article>
+        <article class="main__content detailed__info">
+          <button class="prev">prev</button>
+          <div class="detailed__wrap">
+            <ul class="detailed__container">
+              <li class="img1"></li>
+              <li class="img2"></li>
+              <li class="img3"></li>
+              <li class="img4"></li>
+              <li class="img5">
+                <p class="cafe_theme">Cafe Theme</p>
+                <p class="cafe_name">Cafe Name</p>
+              </li>
+              <li class="img6"></li>
+              <li class="img7"></li>
+              <li class="img8"></li>
+              <li class="img9"></li>
+            </ul>
+            <div class="caption">
+              <h1 class="main_tit">Cafe Theme</h1>
+              <p class="cafe_tit">Cafe Name</p>
+              <p class="cafe_address"><strong>주소</strong>: 인천 연수구 청량로97번길 56 아트리움</p>
+              <p class="cafe_link"><strong>Blog Review</strong>: <a href="www.naver.com">https://blog.naver.com/claire_mj/222411380413</a></p>
+              <p class="stars">평점: 4.5/5</p>
+            </div>
+          </div>
+        </article>
+      </section>
+
+      <footer class="footer">
+        <div class="footer__left">
+          <div class="footer__logo">
+            <h2 class="screen_out"><a href="#none">푸터로고</a></h2>
+            <a href="./index.html"
+              ><img src="../img/01/logo.png" alt="footerLogo"
+            /></a>
+          </div>
+          <div class="footer__copyright">
+            <p>카페 스토리는 사랑을 담아 만듭니다.</p>
+            <p>@CafeStory Corp.</p>
+          </div>
+        </div>
+        <div class="footer__right">
+          <h2 class="screen_out">푸터네비게이션</h2>
+          <ul class="footer__menu">
+            <span>스페셜카페</span>
+            <li class="footer__menu--list"><a href="./drawing.html">루프탑카페</a></li>
+            <li class="footer__menu--list"><a href="./drawing.html">드로잉카페</a></li>
+            <li class="footer__menu--list"><a href="./themed.html">테마카페</a></li>
+            <li class="footer__menu--list"><a href="./healing.html">힐링카페</a></li>
+          </ul>
+          <ul class="footer__menu">
+            <span>팀원소개</span>
+            <li class="footer__menu--list"><a href="https://github.com/gongtaehyuk" target="blank">공태혁</a></li>
+            <li class="footer__menu--list"><a href="https://github.com/GoDoyeon" target="blank">고도연</a></li>
+            <li class="footer__menu--list"><a href="https://github.com/6810779s" target="blank">장은희</a></li>
+          </ul>
+        </div>
+      </footer>
+    </div>
+    <script src="../js/Reactive_header.js"></script>
+    <script src="../js/header.js"></script>
+    <script src="./special.js/hoverMenu.js"></script>
+    <script type="module" src="./detail_js/detail_info.js"></script>
+    <script type="module" src="../darkMode_special/darkMode.js"></script>
+    <script src="../js/onresize.js"></script>
+  </body>
+</html>

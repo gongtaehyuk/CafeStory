@@ -1,0 +1,949 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Noto+Sans+KR:wght@400;700&display=swap');
+@import "../mixin/mixin";
+@import "../variables/variables";
+
+// font-family: 'Noto Sans KR', sans-serif;
+// font-family: 'Dancing Script', cursive;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+a {
+  text-decoration: none;
+}
+
+a,
+button {
+  cursor: pointer;
+}
+
+.scenery__bg__detail {
+  //상세보기 버튼
+  background: $maincolor;
+  p {
+    color: $textcolor;
+  }
+}
+
+html,
+body {
+  height: 100%;
+  font-size: 10px;
+  color: $textcolor;
+  // font-size: 7px; // 맥북 기준
+}
+
+.screen_out {
+  text-indent: -9999px;
+  overflow: hidden;
+  position: absolute;
+}
+
+.container {
+  width: 100%;
+  height: 100%;
+}
+
+// Header
+.header {
+  @include header;
+}
+
+/* section2 */
+.main__home {
+  padding-top: 5rem;
+  width: 100%;
+  background-color: $maincolor;
+  height: 40rem;
+  display: flex;
+  .main__img {
+    margin: 10rem;
+    margin: auto 10rem;
+    //border: 1px solid green;
+    width: 30%;
+    img {
+      width: 20rem;
+    }
+  }
+  .main__tit {
+    margin: 10rem 0;
+    //border: 1px solid red;
+    // width: 70%;
+    width: 100%;
+    font-family: 'Nanum Gothic', sans-serif;
+    line-height: 30px;
+    justify-content: center;
+    text-align: center;
+    @include mobile {
+      width: 30rem;
+      margin: auto;
+    }
+    .sub_text {
+      font-size: 1.6rem;
+      @include tablet {
+        font-size: 2.5rem;
+      }
+      @include mobile {
+        font-size: 1.3rem;
+      }
+    }
+    .main_text {
+      font-size: 4rem;
+      .main {
+        font-weight: bold;
+      }
+      @include tablet {
+        font-size: 3.5rem;
+      }
+      @include mobile {
+        font-size: 2.3rem;
+      }
+    }
+    //padding: 30rem 0;
+  }
+}
+
+/* section 3. Horoscope [별점 높은 순] */
+.main__horoscope {
+  height: 100rem; // 1000px
+  position: relative;
+  overflow: hidden;
+  /* article 3-1. 텍스트 부분 */
+  @include tablet {
+    height: 65rem;
+  }
+  @include mobile {
+    height: 65rem;
+  }
+  .horoscope__tit {
+    font-family: 'Noto Sans KR', sans-serif;
+    display: block;
+    margin: 0 auto;
+    height: 35rem; // 210+80+150 = 440px
+    width: 192rem;
+
+    @include tablet {
+      width: 70rem;
+      height: 20rem;
+      padding-top: 4rem;
+    }
+    @include mobile {
+      width: 30rem;
+      height: 15rem;
+      padding-top: 2rem;
+    }
+    .tit {
+      display: block;
+      padding: 15rem 0 0 18rem;
+      font-weight: 400;
+      font-size: 4em;
+      @include tablet {
+        padding: 0;
+        font-size: 3rem;
+      }
+      @include mobile {
+        padding: 0;
+        font-size: 2rem;
+      }
+      .main__font {
+        font-weight: bold;
+      }
+    }
+    p {
+      display: block;
+      padding: 1.4rem 0 0 18rem;
+      margin-top: 1rem;
+      font-size: 1.6rem;
+      @include tablet {
+        padding: 0;
+      }
+      @include mobile {
+        padding: 0;
+        font-size: 1.3rem;
+      }
+      .main__font {
+        font-weight: bold;
+      }
+    }
+  }
+  /* article 3-2. 슬라이드 + 버튼 */
+  .horoscope__block {
+    position: relative;
+    width: 100%;
+    display: block;
+    /* 별점 높은 순 사진 리스트 부분 */
+    @include mobile {
+      height: 50rem;
+    }
+    .horoscope__wrapper {
+      width: 192rem;
+      height: 10rem;
+      margin: 0 auto;
+      left: 18rem;
+      position: relative;
+      // border: 1px solid green;
+      display: flex;
+      transform: translate3d(0, 0, 0);
+      transition: transform 0.5s;
+      // margin-bottom: 16rem;
+      @include tablet {
+        width: 70rem;
+        left: 0;
+      }
+      @include mobile {
+        width: 30rem;
+        height: 40rem;
+        left: 0;
+        // margin-left: -20rem;
+      }
+      .horoscope {
+        margin-right: 3rem;
+        //border: 1px solid #979797;
+        position: relative;
+        // 이미지 호버 시 나오는 카페 설명 부분
+        @include mobile {
+          height: 40rem;
+        }
+        .horoscope__img {
+          @include mobile {
+            width: 30rem;
+            height: 35rem;
+          }
+        }
+        .horoscope__img__tit {
+          color: #fff;
+          top: 4rem;
+          opacity: 0;
+          padding: 4rem;
+          position: absolute;
+          display: block;
+          width: 100%;
+          transition: all 0.3s ease;
+
+          .cafe__name {
+            display: block;
+            font-size: 5rem;
+          }
+          .cafe__type {
+            display: block;
+
+            margin-top: 2rem;
+            font-size: 3rem;
+          }
+        }
+        &__img {
+          width: 58.4rem;
+          height: 40rem;
+          opacity: 1;
+          transition: all 0.3s ease 0s;
+          overflow: hidden;
+        }
+        &:hover {
+          .horoscope__img {
+            background-color: #333;
+          }
+          img {
+            //transform: scale(1.1, 1.1);
+            transition: all 0.3s ease;
+            opacity: 0.15;
+          }
+          .horoscope__img__tit {
+            opacity: 1;
+            transition: all 0.3s ease;
+          }
+        }
+      }
+    }
+    // 슬라이드 이전 버튼
+    .horoscope__prevbtn {
+      left: 3rem;
+      position: absolute;
+      bottom: -13rem;
+      @include mobile {
+        top: 0;
+        left: 0;
+        bottom: 0;
+      }
+    }
+    // 슬라이드 다음 버튼
+    .horoscope__nextbtn {
+      right: 3rem;
+      position: absolute;
+      bottom: -13rem;
+    }
+    // 공통 버튼
+    .horoscope__btn {
+      border: none;
+      border-radius: 50px;
+      padding: 2rem 2.5rem;
+      background-color: #979797;
+      opacity: 0.8;
+      color: #fff;
+      &:hover {
+        background-color: $maincolor;
+        color: #fff;
+      }
+      @include mobile {
+        width: 5rem;
+        height: 5rem;
+        font-size: 1rem;
+        padding: 0;
+        top: 50%;
+        margin-top: -7.8rem;
+      }
+    }
+  }
+}
+
+/*section 4: 전망좋은 카페*/
+.main__scenery {
+  height: 100rem;
+  @include tablet {
+    height: 65rem;
+  }
+  @include mobile {
+    height: 50rem;
+  }
+  .scenery__box {
+    height: 100rem;
+    position: relative;
+    @include tablet {
+      height: 65rem;
+    }
+    @include mobile {
+      height: 50rem;
+    }
+
+    .scenery__bg__left {
+      width: 33%;
+      height: 100%;
+      float: left;
+      overflow: hidden;
+      position: relative;
+
+      .scenery__bg__bigBox {
+        width: 200%;
+        height: 100%;
+        position: absolute;
+        transition: 0.5s ease-out;
+
+        .scenery__bg__bigSlide1 {
+          @include scenery__bg__Slide;
+          background: url('../img/05/left/L_content_1_1.png') center no-repeat;
+          background-size: cover;
+        }
+
+        .scenery__bg__bigSlide2 {
+          @include scenery__bg__Slide;
+          background: url('../img/05/left/L_content_2_1.png') left top no-repeat;
+          background-size: cover;
+        }
+      }
+
+      .scenery__bg__smallBox {
+        width: 34rem;
+        height: 68rem;
+        right: 0;
+        top: 50%;
+        margin-top: -34rem;
+        position: absolute;
+
+        @include tablet {
+          width: 20rem;
+          height: 40rem;
+          margin-top: -25rem;
+        }
+        @include mobile {
+          width: 10rem;
+          height: 20rem;
+          margin-top: -14rem;
+        }
+        .scenery__bg__up__container {
+          @include scenery__bg__smollContainer;
+
+          .scenery__bg__up {
+            width: 68rem;
+            height: 34rem;
+            position: absolute;
+            transition: 0.5s ease-out;
+            @include tablet {
+              width: 40rem;
+              height: 20rem;
+            }
+            @include mobile {
+              width: 20rem;
+              height: 10rem;
+            }
+
+            .scenery__bg__smallSlide1 {
+              @include scenery__bg__smallSlide;
+              background: url('../img/05/left/L_scenery1_1_bg.png') center
+                no-repeat;
+              background-size: cover;
+            }
+
+            .scenery__bg__smallSlide2 {
+              @include scenery__bg__smallSlide;
+              background: url('../img/05/left/L_scenery_2_1_bg.png') center
+                no-repeat;
+              background-size: cover;
+            }
+          }
+        }
+        .scenery__bg__down {
+          width: 34rem;
+          height: 34rem;
+          background: white;
+          @include tablet {
+            width: 20rem;
+            height: 20rem;
+          }
+          @include mobile {
+            width: 10rem;
+            height: 10rem;
+          }
+          .scenery__bg__small {
+            width: 34rem;
+            height: 34rem;
+            position: absolute;
+            background: url('../img/05/left/L_text_2_1.png') center no-repeat;
+            background-size: cover;
+            opacity: 1;
+            transition: opacity 1s;
+            @include tablet {
+              width: 20rem;
+              height: 20rem;
+            }
+            @include mobile {
+              width: 10rem;
+              height: 10rem;
+            }
+          }
+          .scenery__bg__small2 {
+            width: 34rem;
+            height: 34rem;
+            position: absolute;
+            background: url('../img/05/left/L_text_1_1.png') center no-repeat;
+            background-size: cover;
+            opacity: 0;
+            transition: opacity 1s;
+            @include tablet {
+              width: 20rem;
+              height: 20rem;
+            }
+            @include mobile {
+              width: 10rem;
+              height: 10rem;
+            }
+          }
+        }
+      }
+    }
+    .scenery__bg__right {
+      width: 67%;
+      height: 100%;
+      float: left;
+      overflow: hidden;
+      position: relative;
+
+      .scenery__bg__detail {
+        width: 15rem;
+        height: 15rem;
+        border-radius: 50%;
+        box-shadow: 5px 5px 15px 5px $boxshadow;
+        padding-top: 5.7rem;
+        position: absolute;
+        z-index: 999;
+        top: 50%;
+        left: 25rem;
+        margin-top: 22rem;
+        transition: 0.2s ease-in;
+        @include tablet {
+          width: 13rem;
+          height: 13rem;
+          margin-top: 14rem;
+          padding-top: 4.7rem;
+        }
+        @include mobile {
+          width: 8rem;
+          height: 8rem;
+          padding-top: 3rem;
+          top: 0;
+          left: 0;
+          margin: 0;
+          top: 40rem;
+          left: 40%;
+          margin: 0;
+          margin-left: 3rem;
+        }
+        p {
+          width: 15rem;
+          font-size: 2rem;
+          text-align: center;
+          @include tablet {
+            width: 13rem;
+          }
+          @include mobile {
+            width: 8rem;
+            font-size: 1.3rem;
+          }
+        }
+        .arrow {
+          font-size: 2rem;
+          text-shadow: 5px 5px 7px $boxshadow;
+        }
+        &:hover {
+          transform: scale(1.2);
+        }
+      }
+
+      .scenery__bg__bigBox {
+        width: 200%;
+        height: 100%;
+        position: absolute;
+        transition: 0.5s ease-out;
+
+        .scenery__bg__bigSlide1 {
+          @include scenery__bg__Slide;
+          background: url('../img/05/right/R_content_1_1.png') center no-repeat;
+          background-size: cover;
+        }
+
+        .scenery__bg__bigSlide2 {
+          @include scenery__bg__Slide;
+          background: url('../img/05/right/R_content_2_1.png') center no-repeat;
+          background-size: cover;
+        }
+      }
+
+      .scenery__bg__smallBox {
+        width: 34rem;
+        height: 68rem;
+        left: 0;
+        top: 50%;
+        margin-top: -34rem;
+        position: absolute;
+        @include tablet {
+          width: 20rem;
+          height: 40rem;
+          margin-top: -25rem;
+        }
+        @include mobile {
+          width: 10rem;
+          height: 20rem;
+          margin-top: -14rem;
+        }
+
+        .scenery__bg__up {
+          width: 34rem;
+          height: 34rem;
+          background: white;
+          @include tablet {
+            width: 20rem;
+            height: 20rem;
+          }
+          @include mobile {
+            width: 10rem;
+            height: 10rem;
+          }
+
+          .scenery__bg__small {
+            width: 34rem;
+            height: 34rem;
+            position: absolute;
+            background: url('../img/05/right/R_text_2_1.png') center no-repeat;
+            background-size: cover;
+            opacity: 1;
+            transition: opacity 1s;
+            @include tablet {
+              width: 20rem;
+              height: 20rem;
+            }
+            @include mobile {
+              width: 10rem;
+              height: 10rem;
+            }
+          }
+          .scenery__bg__small2 {
+            width: 34rem;
+            height: 34rem;
+            position: absolute;
+            background: url('../img/05/right/R_text_1_1.png') center no-repeat;
+            background-size: cover;
+            opacity: 0;
+            transition: opacity 1s;
+            @include tablet {
+              width: 20rem;
+              height: 20rem;
+            }
+            @include mobile {
+              width: 10rem;
+              height: 10rem;
+            }
+          }
+        }
+        .scenery__bg__down__container {
+          @include scenery__bg__smollContainer;
+
+          .scenery__bg__down {
+            width: 68rem;
+            height: 34rem;
+            position: absolute;
+            transition: 0.5s ease-out;
+            @include tablet {
+              width: 40rem;
+              height: 20rem;
+            }
+            @include mobile {
+              width: 20rem;
+              height: 10rem;
+            }
+
+            .scenery__bg__smallSlide1 {
+              @include scenery__bg__smallSlide;
+              background: url('../img/05/right/R_scenery1_1_bg.png') center
+                no-repeat;
+              background-size: cover;
+            }
+
+            .scenery__bg__smallSlide2 {
+              @include scenery__bg__smallSlide;
+              background: url('../img/05/right/R_scenery2_1_bg.png.png') center
+                no-repeat;
+              background-size: cover;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+/*section 5: 이달의 카페*/
+.main__best {
+  height: 1080px;
+  position: relative;
+  overflow: hidden;
+  @include tablet {
+    height: 60rem;
+  }
+  @include mobile {
+    height: 60rem;
+  }
+
+  .best__tit {
+    width: 98.8rem;
+    height: 50rem;
+    padding: 22rem 0px 0px 9.2rem;
+    margin: 0 auto;
+    line-height: 30px;
+    letter-spacing: 2px;
+    @include tablet {
+      width: 70rem;
+      height: 25rem;
+      padding: 8rem 0px;
+    }
+    @include mobile {
+      width: 30rem;
+      height: 25rem;
+      padding: 8rem 0px;
+    }
+  }
+
+  .tit {
+    font-size: 4rem;
+    margin-bottom: 3rem;
+    @include tablet {
+      font-size: 3rem;
+    }
+    @include mobile {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+  }
+  .sub__tit {
+    font-size: 1.6rem;
+
+    font-family: 'Frank Ruhl Libre', serif;
+    @include mobile {
+      font-size: 1.3rem;
+    }
+  }
+
+  .best__bg {
+    width: 100%;
+    height: 58rem;
+    position: relative;
+    overflow: hidden;
+    background: url('../img/06/best_1_1.png') center no-repeat;
+    background-size: cover;
+    @include tablet {
+      height: 35rem;
+    }
+    @include mobile {
+      height: 35rem;
+    }
+
+    .best__inner__bg {
+      width: 100%;
+      height: 58rem;
+      position: absolute;
+      top: 0rem;
+      background: url('../img/06/bg.png') center no-repeat;
+      background-size: cover;
+      transition: 0.5s ease-out;
+      @include tablet {
+        height: 35rem;
+      }
+      @include mobile {
+        height: 35rem;
+      }
+    }
+  }
+
+  .best__box {
+    width: 36rem;
+    height: 55rem;
+    position: absolute;
+    overflow: hidden;
+    background: url('../img/06/best1.png') top no-repeat;
+    background-size: cover;
+    top: 21rem;
+    left: 60%;
+    box-shadow: 10px 10px 15px $boxshadow;
+
+    @include tablet {
+      width: 25rem;
+      height: 36rem;
+      top: 8rem;
+    }
+    @include mobile {
+      width: 13rem;
+      height: 20rem;
+      top: 15rem;
+      margin-left: -2rem;
+    }
+
+    .best__header {
+      width: 36rem;
+      height: 55rem;
+      position: absolute;
+      top: 55rem;
+      background: url('../img/06/best2.png') top no-repeat;
+      background-size: cover;
+      transition: 0.5s ease-out;
+
+      @include tablet {
+        width: 25rem;
+        height: 36rem;
+        top: 36rem;
+      }
+      @include mobile {
+        width: 13rem;
+        height: 20rem;
+        top: 20rem;
+      }
+    }
+  }
+
+  .scenery__bg__detail {
+    width: 15rem;
+    height: 15rem;
+    border-radius: 50%;
+    box-shadow: 5px 5px 15px 5px $boxshadow;
+    padding-top: 5.7rem;
+    position: absolute;
+    z-index: 999;
+    top: 50rem;
+    left: 60%;
+    margin: 22rem;
+    transition: 0.2s ease-in;
+
+    @include tablet {
+      width: 13rem;
+      height: 13rem;
+      padding-top: 4.7rem;
+      top: 38rem;
+      left: 60%;
+      margin: 0;
+      margin-left: 17rem;
+    }
+
+    @include mobile {
+      width: 8rem;
+      height: 8rem;
+      padding-top: 3rem;
+      top: 33rem;
+      left: 60%;
+      margin: 0;
+      margin-left: 5rem;
+    }
+
+    p {
+      width: 15rem;
+      font-size: 2rem;
+      text-align: center;
+      @include tablet {
+        width: 13rem;
+      }
+      @include mobile {
+        width: 8rem;
+        font-size: 1.3rem;
+      }
+    }
+    .arrow {
+      font-size: 2rem;
+      text-shadow: 5px 5px 7px $boxshadow;
+    }
+    &:hover {
+      transform: scale(1.2);
+    }
+  }
+}
+
+/* section 6. New cafe 4 [뉴 카페] */
+.main__newCafe {
+  height: 100rem;
+  position: relative;
+  background-color: $maincolor;
+  margin: 0 auto;
+  z-index: 1;
+
+  @include tablet {
+    height: 80rem;
+  }
+  @include mobile {
+    height: 60rem;
+  }
+  /* article 6-1. 텍스트 부분 */
+  .newCafe__tit {
+    // border: 1px solid black;
+    font-family: 'Noto Sans KR', sans-serif;
+    padding: 15rem 0 8rem 0;
+    text-align: center;
+    @include tablet {
+      padding: 8rem 0;
+    }
+    @include mobile {
+      padding: 3.5rem 0 3rem 0;
+    }
+    .tit {
+      display: block;
+      //padding: 21rem 0 0 18rem;
+      font-weight: 400;
+      font-size: 4rem;
+      margin-bottom: 5rem;
+      @include tablet {
+        font-size: 3rem;
+      }
+      @include mobile {
+        font-size: 2rem;
+        margin-bottom: 3rem;
+      }
+      .main__font {
+        font-weight: bold;
+        color: $textcolor;
+      }
+    }
+    button {
+      background-color: $buttoncolor;
+      padding: 1.5rem 5rem;
+      border-radius: 50px;
+      font-size: 1.6rem;
+      border: none;
+      color: $textcolor;
+      @include mobile {
+        padding: 1rem 3rem;
+        font-size: 1.3rem;
+      }
+    }
+    // p {
+    //   display: block;
+    //   // padding: 1.4rem 0 0 18rem;
+    //   margin-top: 1rem;
+    //   font-size: 3rem;
+    //   .main__font {
+    //     font-weight: bold;
+    //     color: $hovercolor_special;
+    //   }
+    // }
+  }
+  /* article 6-2. 슬라이드 + 버튼 */
+  .newCafe__block {
+    position: relative;
+    width: 79rem;
+    margin: 0 auto;
+    display: block;
+    @include tablet {
+      width: 100%;
+    }
+    @include mobile {
+      width: 100%;
+    }
+
+    .swiper-button-next {
+      right: -70px;
+      color: $buttoncolor;
+      &:hover {
+        color: #333;
+      }
+      @include tablet {
+        right: 0;
+      }
+      @include mobile {
+        right: 0;
+      }
+    }
+    .swiper-button-prev {
+      left: -70px;
+      color: $buttoncolor;
+      &:hover {
+        color: $textcolor;
+      }
+      @include tablet {
+        left: 0;
+      }
+      @include mobile {
+        left: 0;
+      }
+    }
+    .swiperbtn {
+      color: $textcolor;
+    }
+    /* 뉴 카페 이미지 슬라이드 */
+    .swiper-container {
+      height: 100%;
+      @include tablet {
+        width: 70rem;
+      }
+      @include mobile {
+        width: 100%;
+      }
+      .swiper-wrapper {
+        @include tablet {
+          width: 58.4rem;
+        }
+        @include mobile {
+          width: 30rem;
+        }
+      }
+    }
+    .swiper-slide {
+      text-align: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 5px;
+      box-sizing: border-box; /* 이 설정을 하지 않으면 슬라이드드가 틀어짐 */
+    }
+  }
+}
+
+// Footer
+
+.footer {
+  @include footer;
+}
